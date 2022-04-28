@@ -115,10 +115,7 @@ class __TwigTemplate_bea970c0069d766ae9cd721ddbfcf0c5 extends Template
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
-            <link rel=\"stylesheet\" href=\"";
-        // line 11
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/css/bootstrap.css"), "html", null, true);
-        echo "\">
+
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -176,7 +173,7 @@ class __TwigTemplate_bea970c0069d766ae9cd721ddbfcf0c5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  155 => 19,  142 => 15,  132 => 14,  120 => 11,  115 => 10,  105 => 9,  86 => 5,  74 => 20,  72 => 19,  68 => 17,  66 => 14,  63 => 13,  61 => 9,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  152 => 19,  139 => 15,  129 => 14,  115 => 10,  105 => 9,  86 => 5,  74 => 20,  72 => 19,  68 => 17,  66 => 14,  63 => 13,  61 => 9,  58 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +188,7 @@ class __TwigTemplate_bea970c0069d766ae9cd721ddbfcf0c5 extends Template
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            <link rel=\"stylesheet\" href=\"{{asset('node_modules/bootstrap/dist/css/bootstrap.css')}}\">
+
         {% endblock %}
 
         {% block javascripts %}

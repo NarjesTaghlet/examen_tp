@@ -5,39 +5,29 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-    <title> To Do List  </title>
+    <title>Exercice ToDo</title>
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
 </head>
-
 <body>
-<div class="container-fluid ">
-    {% for valeur in app.session.flashBag.get('info') %}
-        <div class="alert alert-info">
-            {{ valeur}}
-        </div>
-    {% endfor %}
-    {% for valeur in app.session.flashBag.get('success') %}
-        <div class="alert alert-success">
-            {{ valeur}}
-        </div>
-    {% endfor %}
-    {% for valeur in app.session.flashBag.get('erreur') %}
-        <div class="alert alert-danger">
-            {{ valeur }}
-        </div>
-    {% endfor %}
-    <h1 style="text-align: center;"> To Do List</h1>
-    <ol class="list-group">
-        {% for nom,description in app.session.get('todos') %}
-        <li class="list-group-item">
-            {{ nom }} :<br> {{ description }}
-        </li>
-    </ol>
-         {% endfor %}
+{% for valeur in app.session.flashBag.get('info') %}
+    <div class="alert alert-info">{{ valeur }}</div>
+{% endfor %}
+{% for valeur in app.session.flashBag.get('success') %}
+    <div class="alert alert-success">{{ valeur }}</div>
+{% endfor %}
+{% for valeur in app.session.flashBag.get('erreur') %}
+    <div class="alert alert-danger">{{ valeur }}</div>
+{% endfor %}
 
-</div>s
+
+<h2>La Liste des todos : </h2>
+
+<ol class="list-group">
+    {% for name, contenu in app.session.get('todos') %}
+        <li class="list-group-item">
+            {{ name  }} : {{ contenu  }}
+        </li>
+    {% endfor %}
+</ol>
 </body>
 </html>

@@ -47,92 +47,80 @@ class __TwigTemplate_4faa90259cb01772d9b38d1f7b421695 extends Template
     <meta name=\"viewport\"
           content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-    <!-- CSS only -->
-    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css\">
-<!-- <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script> -->
-    <title> To Do List  </title>
+    <title>Exercice ToDo</title>
+    <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/css/bootstrap.css"), "html", null, true);
+        echo "\">
 </head>
-
 <body>
-<div class=\"container-fluid \">
-    ";
-        // line 17
+";
+        // line 12
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "session", [], "any", false, false, false, 17), "flashBag", [], "any", false, false, false, 17), "get", [0 => "info"], "method", false, false, false, 17));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "session", [], "any", false, false, false, 12), "flashBag", [], "any", false, false, false, 12), "get", [0 => "info"], "method", false, false, false, 12));
         foreach ($context['_seq'] as $context["_key"] => $context["valeur"]) {
-            // line 18
-            echo "        <div class=\"alert alert-info\">
-            ";
+            // line 13
+            echo "    <div class=\"alert alert-info\">";
+            echo twig_escape_filter($this->env, $context["valeur"], "html", null, true);
+            echo "</div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['valeur'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "session", [], "any", false, false, false, 15), "flashBag", [], "any", false, false, false, 15), "get", [0 => "success"], "method", false, false, false, 15));
+        foreach ($context['_seq'] as $context["_key"] => $context["valeur"]) {
+            // line 16
+            echo "    <div class=\"alert alert-success\">";
+            echo twig_escape_filter($this->env, $context["valeur"], "html", null, true);
+            echo "</div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['valeur'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "session", [], "any", false, false, false, 18), "flashBag", [], "any", false, false, false, 18), "get", [0 => "erreur"], "method", false, false, false, 18));
+        foreach ($context['_seq'] as $context["_key"] => $context["valeur"]) {
             // line 19
+            echo "    <div class=\"alert alert-danger\">";
             echo twig_escape_filter($this->env, $context["valeur"], "html", null, true);
-            echo "
-        </div>
-    ";
+            echo "</div>
+";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['valeur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
-        echo "    ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "session", [], "any", false, false, false, 22), "flashBag", [], "any", false, false, false, 22), "get", [0 => "success"], "method", false, false, false, 22));
-        foreach ($context['_seq'] as $context["_key"] => $context["valeur"]) {
-            // line 23
-            echo "        <div class=\"alert alert-success\">
-            ";
-            // line 24
-            echo twig_escape_filter($this->env, $context["valeur"], "html", null, true);
-            echo "
-        </div>
+        // line 21
+        echo "
+
+<h2>La Liste des todos : </h2>
+
+<ol class=\"list-group\">
     ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['valeur'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "    ";
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "session", [], "any", false, false, false, 27), "flashBag", [], "any", false, false, false, 27), "get", [0 => "erreur"], "method", false, false, false, 27));
-        foreach ($context['_seq'] as $context["_key"] => $context["valeur"]) {
-            // line 28
-            echo "        <div class=\"alert alert-danger\">
-            ";
-            // line 29
-            echo twig_escape_filter($this->env, $context["valeur"], "html", null, true);
-            echo "
-        </div>
-    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['valeur'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
-        echo "    <h1 style=\"text-align: center;\"> To Do List</h1>
-    <ol class=\"list-group\">
-        ";
-        // line 34
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "session", [], "any", false, false, false, 34), "get", [0 => "todos"], "method", false, false, false, 34));
-        foreach ($context['_seq'] as $context["nom"] => $context["description"]) {
-            // line 35
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "session", [], "any", false, false, false, 26), "get", [0 => "todos"], "method", false, false, false, 26));
+        foreach ($context['_seq'] as $context["name"] => $context["contenu"]) {
+            // line 27
             echo "        <li class=\"list-group-item\">
             ";
-            // line 36
-            echo twig_escape_filter($this->env, $context["nom"], "html", null, true);
-            echo " :<br> ";
-            echo twig_escape_filter($this->env, $context["description"], "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $context["name"], "html", null, true);
+            echo " : ";
+            echo twig_escape_filter($this->env, $context["contenu"], "html", null, true);
             echo "
         </li>
-    </ol>
-         ";
+    ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['nom'], $context['description'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['name'], $context['contenu'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
-        echo "
-</div>s
+        // line 31
+        echo "</ol>
 </body>
 </html>";
         
@@ -155,7 +143,7 @@ class __TwigTemplate_4faa90259cb01772d9b38d1f7b421695 extends Template
 
     public function getDebugInfo()
     {
-        return array (  134 => 40,  122 => 36,  119 => 35,  115 => 34,  111 => 32,  102 => 29,  99 => 28,  94 => 27,  85 => 24,  82 => 23,  77 => 22,  68 => 19,  65 => 18,  61 => 17,  43 => 1,);
+        return array (  123 => 31,  112 => 28,  109 => 27,  105 => 26,  98 => 21,  89 => 19,  85 => 18,  76 => 16,  72 => 15,  63 => 13,  59 => 12,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -167,40 +155,30 @@ class __TwigTemplate_4faa90259cb01772d9b38d1f7b421695 extends Template
     <meta name=\"viewport\"
           content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-    <!-- CSS only -->
-    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css\">
-<!-- <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script> -->
-    <title> To Do List  </title>
+    <title>Exercice ToDo</title>
+    <link rel=\"stylesheet\" href=\"{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}\">
 </head>
-
 <body>
-<div class=\"container-fluid \">
-    {% for valeur in app.session.flashBag.get('info') %}
-        <div class=\"alert alert-info\">
-            {{ valeur}}
-        </div>
-    {% endfor %}
-    {% for valeur in app.session.flashBag.get('success') %}
-        <div class=\"alert alert-success\">
-            {{ valeur}}
-        </div>
-    {% endfor %}
-    {% for valeur in app.session.flashBag.get('erreur') %}
-        <div class=\"alert alert-danger\">
-            {{ valeur }}
-        </div>
-    {% endfor %}
-    <h1 style=\"text-align: center;\"> To Do List</h1>
-    <ol class=\"list-group\">
-        {% for nom,description in app.session.get('todos') %}
-        <li class=\"list-group-item\">
-            {{ nom }} :<br> {{ description }}
-        </li>
-    </ol>
-         {% endfor %}
+{% for valeur in app.session.flashBag.get('info') %}
+    <div class=\"alert alert-info\">{{ valeur }}</div>
+{% endfor %}
+{% for valeur in app.session.flashBag.get('success') %}
+    <div class=\"alert alert-success\">{{ valeur }}</div>
+{% endfor %}
+{% for valeur in app.session.flashBag.get('erreur') %}
+    <div class=\"alert alert-danger\">{{ valeur }}</div>
+{% endfor %}
 
-</div>s
+
+<h2>La Liste des todos : </h2>
+
+<ol class=\"list-group\">
+    {% for name, contenu in app.session.get('todos') %}
+        <li class=\"list-group-item\">
+            {{ name  }} : {{ contenu  }}
+        </li>
+    {% endfor %}
+</ol>
 </body>
 </html>", "todo/index.html.twig", "C:\\Symfony-projects\\my_project\\templates\\todo\\index.html.twig");
     }
