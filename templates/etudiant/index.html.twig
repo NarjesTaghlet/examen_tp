@@ -1,12 +1,15 @@
 {% extends 'template.html.twig' %}
 
 {% block title %}Hello EtudiantController!{% endblock %}
+{% block PageTitle%}
+Liste Des Etudiants
+{%endblock%}
 
 {% block body %}
     <div class="table">
         <div class="dataTable-container">
-            <table id="datatablesSimple" class="dataTable-table">
-                <a href=" #">Ajouter une personne</a>
+            <table class="dataTable-table">
+                <a href="{{ path('etudiant.edit')}}">Ajouter un etudiant</a>
                 <th>
                 <tr>
                    <td>Nom</td>
@@ -15,15 +18,17 @@
                   <td>Action</td>
                 </tr>
                 </th>
-                <tr class="{{ loop.index is even ? "bg-white" : "bg-secondary" }}">
+                {% for etudiant in etudiants%}
+                <tr class="{{ loop.index is odd? "bg-info": "bg-warning" }}">
                     <td>{{etudiant.nom}}</td>
                     <td>{{etudiant.prenom}}</td>
-                    <td>{{etudiant.section is same as null ?  "Non encore affecté" : etudiant.section.designation}}</td>
+                    <td>{{etudiant.section == null ? "Etudiant non encore affecté  a une section" : etudiant.section.designation}}</td>
                     <td>
                         <a href="{{path("etudiant.edit", {id: etudiant.id })}}">Edit</a>
                         <a href="{{path("etudiant.delete", {id: etudiant.id })}}">Delete</a>
                     </td>
                 </tr>
+                {%endfor%}
             </table>
             </div>
     </div>

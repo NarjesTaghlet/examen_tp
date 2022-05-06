@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\EtudiantRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: EtudiantRepository::class)]
 class Etudiant
@@ -14,9 +15,13 @@ class Etudiant
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "veuillez remplir ce champ")]
+    #[Assert\Length(min: 4,minMessage: "Veuillez entrer au moins 4 caracteres")]
     private $nom;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: "veuillez remplir ce champ")]
+    #[Assert\Length(min: 4,minMessage: "Veuillez entrer au moins 4 caracteres")]
     private $prenom;
 
     #[ORM\ManyToOne(targetEntity: Section::class, inversedBy: 'etudiant')]

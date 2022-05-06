@@ -2,15 +2,23 @@
 
 {% block body %}
     {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
-    <div class="row">
+        <div class="row">
         <div class="col">{{form_row(form.nom)}}</div>
-        <div class="col">{{form_row(form.prenom)}}</div>
-        <div class="col">{{form_row(form.section)}}</div>
+        <div class="row">
+            <div class="col">{{form_row(form.prenom)}}</div>
+        </div>
 
     </div>
+<div class="row">
+    <div class="col">{{form_row(form.section)}}</div>
+</div>
+
     {{form_rest(form)}}
 {% endblock %}
 
 {% block title%}
     Form
 {% endblock %}
+{% block PageTitle%}
+    Remplir ce Formulaire
+{%endblock%}

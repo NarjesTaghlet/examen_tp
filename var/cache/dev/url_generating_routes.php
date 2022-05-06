@@ -15,9 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'todo' => [[], ['_controller' => 'App\\Controller\\TodoController::index'], [], [['text', '/todo']], [], [], []],
-    'addTodo' => [['name', 'content'], ['_controller' => 'App\\Controller\\TodoController::addTodo'], [], [['variable', '/', '[^/]++', 'content', true], ['variable', '/', '[^/]++', 'name', true], ['text', '/todo/add']], [], [], []],
-    'DeleteToDo' => [['name'], ['_controller' => 'App\\Controller\\TodoController::DeleteToDo'], [], [['variable', '/', '[^/]++', 'name', true], ['text', '/todo/delete']], [], [], []],
-    'UpdateToDo' => [['newName', 'newcontent'], ['content' => 'null', '_controller' => 'App\\Controller\\TodoController::updateTodo'], [], [['variable', '/', '[^/]++', 'newcontent', true], ['variable', '/', '[^/]++', 'newName', true], ['text', '/todo/updatetodo']], [], [], []],
-    'ResetToDo' => [[], ['_controller' => 'App\\Controller\\TodoController::ResetToDo'], [], [['text', '/todo/resettodo']], [], [], []],
+    'etudiant.liste' => [[], ['_controller' => 'App\\Controller\\EtudiantController::AfficherEtudiant'], [], [['text', '/etudiant/all']], [], [], []],
+    'etudiant.edit' => [['id'], ['id' => '0', '_controller' => 'App\\Controller\\EtudiantController::addEtudiant'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/etudiant/edit']], [], [], []],
+    'etudiant.delete' => [['id'], ['_controller' => 'App\\Controller\\EtudiantController::deleteEtudiant'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/etudiant/delete']], [], [], []],
 ];

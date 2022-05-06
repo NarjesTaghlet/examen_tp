@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Etudiant;
-use App\Entity\PFE;
 use App\Form\EtudiantType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,17 +13,9 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/etudiant')]
 class EtudiantController extends AbstractController
 {
-    #[Route('/', name: 'app_etudiant')]
-    public function index(): Response
-    {
-        return $this->render('etudiant/index.html.twig', [
-            'controller_name' => 'EtudiantController',
-        ]);
-    }
-    #[
-        Route('/all', name: 'etudiant.liste')
-    ]
-    public function AfficherEtudiant(ManagerRegistry $doctrine,Etudiant $etudiant): Response {
+//affichage du liste des etudiants
+    #[Route('/all', name: 'etudiant.liste')]
+    public function AfficherEtudiant(ManagerRegistry $doctrine,Etudiant $etudiant=null): Response {
         $manager = $doctrine->getManager();
         $repository = $doctrine->getRepository(Etudiant::class);
         $etudiants = $repository->findAll();
@@ -34,6 +25,7 @@ class EtudiantController extends AbstractController
         ]);
 
     }
+    //modifier ou ajouter un etudiant
     #[Route('/edit/{id?0}', name: 'etudiant.edit')]
     public function addEtudiant(Etudiant $etudiant = null, ManagerRegistry $doctrine, Request $request): Response
     {
@@ -73,19 +65,18 @@ class EtudiantController extends AbstractController
 
     }
 #[Route('/delete/{id}', name: 'etudiant.delete')]
-public function deletePersonne(Etudiant $etudiant = null, ManagerRegistry $doctrine):RedirectResponse {
-    // Récupérer la etudiant
+public function deleteEtudiant(Etudiant $etudiant = null, ManagerRegistry $doctrine):RedirectResponse {
+    // Récupérer l etudiant
     if ($etudiant) {
-        // Si la etudiant existe => le supprimer et retourner un flashMessage de succés
+        // Si  etudiant existe =>  supprimer , retourner un Message de succés
         $manager = $doctrine->getManager();
-        // Ajoute la fonction de suppression dans la transaction
         $manager->remove($etudiant);
-        // Exécuter la transacition
+        // Exécution de la transacition
         $manager->flush();
-        $this->addFlash('success', "La etudiant a été supprimé avec succès");
+        $this->addFlash('success', "L' etudiant a été supprimé avec succès");
     } else {
-        //Sinon  retourner un flashMessage d'erreur
-        $this->addFlash('error', "etudiant innexistante");
+        //Sinon  retourner un Message d'erreur
+        $this->addFlash('erreur', "l'etudiant est innexistant!!!");
     }
     return $this->redirectToRoute('etudiant.liste');
 }

@@ -13,8 +13,7 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/todo' => [[['_route' => 'todo', '_controller' => 'App\\Controller\\TodoController::index'], null, null, null, false, false, null]],
-        '/todo/resettodo' => [[['_route' => 'ResetToDo', '_controller' => 'App\\Controller\\TodoController::ResetToDo'], null, null, null, false, false, null]],
+        '/etudiant/all' => [[['_route' => 'etudiant.liste', '_controller' => 'App\\Controller\\EtudiantController::AfficherEtudiant'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -33,10 +32,9 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/todo/(?'
-                    .'|add/([^/]++)/([^/]++)(*:199)'
-                    .'|delete/([^/]++)(*:222)'
-                    .'|updatetodo/([^/]++)/([^/]++)(*:258)'
+                .'|/etudiant/(?'
+                    .'|edit(?:/([^/]++))?(*:200)'
+                    .'|delete/([^/]++)(*:223)'
                 .')'
             .')/?$}sDu',
     ],
@@ -48,10 +46,9 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        199 => [[['_route' => 'addTodo', '_controller' => 'App\\Controller\\TodoController::addTodo'], ['name', 'content'], null, null, false, true, null]],
-        222 => [[['_route' => 'DeleteToDo', '_controller' => 'App\\Controller\\TodoController::DeleteToDo'], ['name'], null, null, false, true, null]],
-        258 => [
-            [['_route' => 'UpdateToDo', 'content' => 'null', '_controller' => 'App\\Controller\\TodoController::updateTodo'], ['newName', 'newcontent'], null, null, false, true, null],
+        200 => [[['_route' => 'etudiant.edit', 'id' => '0', '_controller' => 'App\\Controller\\EtudiantController::addEtudiant'], ['id'], null, null, false, true, null]],
+        223 => [
+            [['_route' => 'etudiant.delete', '_controller' => 'App\\Controller\\EtudiantController::deleteEtudiant'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
