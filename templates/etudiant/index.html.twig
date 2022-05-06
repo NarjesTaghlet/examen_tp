@@ -1,0 +1,30 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Hello EtudiantController!{% endblock %}
+
+{% block body %}
+    <div class="table">
+        <div class="dataTable-container">
+            <table id="datatablesSimple" class="dataTable-table">
+                <a href=" #">Ajouter une personne</a>
+                <th>
+                <tr>
+                   <td>Nom</td>
+                   <td>Prenom</td>
+                   <td>Section</td>
+                  <td>Action</td>
+                </tr>
+                </th>
+                <tr class="{{ loop.index is even ? "bg-white" : "bg-secondary" }}">
+                    <td>{{etudiant.nom}}</td>
+                    <td>{{etudiant.prenom}}</td>
+                    <td>{{etudiant.section is same as null ?  "Non encore affecté" : etudiant.section.designation}}</td>
+                    <td>
+                        <a href="{{path("etudiant.edit", {id: etudiant.id })}}">Edit</a>
+                        <a href="{{path("etudiant.delete", {id: etudiant.id })}}">Delete</a>
+                    </td>
+                </tr>
+            </table>
+            </div>
+    </div>
+{% endblock %}
