@@ -4,6 +4,14 @@
 {% block PageTitle%}
 Liste Des Etudiants
 {%endblock%}
+{% block stylesheets %}
+  <style>
+      .highlight{
+          color: #ff413c;
+      }
+
+  </style>
+{% endblock %}
 
 {% block body %}
     <div class="table">
@@ -20,7 +28,7 @@ Liste Des Etudiants
                 </th>
                 {% for etudiant in etudiants%}
                 <tr class="{{ loop.index is odd? "bg-info": "bg-warning" }}">
-                    <td>{{etudiant.nom}}</td>
+                    <td onclick="changeColor(this)">{{etudiant.nom}}</td>
                     <td>{{etudiant.prenom}}</td>
                     <td>{{etudiant.section == null ? "Etudiant non encore affecté  a une section" : etudiant.section.designation}}</td>
                     <td>
@@ -32,4 +40,39 @@ Liste Des Etudiants
             </table>
             </div>
     </div>
+    <!-- pagination -->
+
+
+    {% if isPaginated is defined and isPaginated %}
+        <div class="row-cols-1 small">
+        <nav aria-label=" col Page navigation example">
+        <ul class="pagination">
+            {% if page!=1%}
+                <li class="page-item"><a class="page-link" href="{{path('etudiant.liste',{page:page-1,nbre:nbre})}}">Previous</a></li>
+            {%endif%}
+            {% for i in range(1,nbpage)%}
+                <li class="page-item"><a class="page-link" href="{{ path('etudiant.liste',{page:i,nbre:nbre})}}">{{ i }}</a></li>
+            {%endfor%}
+            {% if page!=nbpage%}
+                <li class="page-item"><a class="page-link" href="{{path('etudiant.liste',{page:page+1,nbre:nbre})}}">Next</a></li>
+            {%endif%}
+        </ul>
+    {%endif%}
+    </nav>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    console.log('hello');
+    const td = document.querySelectorAll('td')
+    td.forEach(e => {
+        e.addEventListener('click', () => {
+            console.log(e);
+            e.classList.toggle('highlight');
+        })
+
+    })
+</script>
 {% endblock %}

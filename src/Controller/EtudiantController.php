@@ -14,13 +14,22 @@ use Symfony\Component\Routing\Annotation\Route;
 class EtudiantController extends AbstractController
 {
 //affichage du liste des etudiants
-    #[Route('/all', name: 'etudiant.liste')]
-    public function AfficherEtudiant(ManagerRegistry $doctrine,Etudiant $etudiant=null): Response {
+    #[Route('/all/{page?1}/{nbre?10}', name: 'etudiant.liste')]
+    public function AfficherEtudiant(ManagerRegistry $doctrine,Etudiant $etudiant=null,$page,$nbre): Response {
         $manager = $doctrine->getManager();
         $repository = $doctrine->getRepository(Etudiant::class);
-        $etudiants = $repository->findAll();
+        $etudiants = $repository->findBy([],[],$nbre,($page-1)*$nbre);
+        // nbr des etudiants
+        $nbetudiant=$repository->count([]);
+        // nbre de pages
+        $nbrepage=ceil($nbetudiant / $nbre );
         return $this->render('etudiant/index.html.twig', [
-            'etudiants' => $etudiants
+            'etudiants' => $etudiants,
+            'page'=>$page,
+            'isPaginated'=>true,
+            'nbpage'=>$nbrepage,
+            'nbre'=>$nbre
+
 
         ]);
 

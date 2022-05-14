@@ -60,8 +60,8 @@ return [[
 '[C]App%5CController%5CEtudiantController%23AfficherEtudiant' => 1,
 'App%5CController%5CEtudiantController%23addEtudiant' => 0,
 '[C]App%5CController%5CEtudiantController%23addEtudiant' => 1,
-'App%5CController%5CEtudiantController%23deletePersonne' => 0,
-'[C]App%5CController%5CEtudiantController%23deletePersonne' => 1,
+'App%5CController%5CEtudiantController%23deleteEtudiant' => 0,
+'[C]App%5CController%5CEtudiantController%23deleteEtudiant' => 1,
 'App%5CEntity%5CEtudiant' => 0,
 '[C]App%5CEntity%5CEtudiant' => 1,
 'App%5CEntity%5CEtudiant%23getId' => 0,
@@ -102,6 +102,8 @@ return [[
 '[C]App%5CEntity%5CSection%23addEtudiant' => 1,
 'App%5CEntity%5CSection%23removeEtudiant' => 0,
 '[C]App%5CEntity%5CSection%23removeEtudiant' => 1,
+'App%5CEntity%5CSection%23__toString' => 0,
+'[C]App%5CEntity%5CSection%23__toString' => 1,
 'App%5CEntity%5CSection%24id' => 0,
 '[C]App%5CEntity%5CSection%24id' => 1,
 'App%5CEntity%5CSection%24designation' => 0,
@@ -656,6 +658,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1651852993,
+1 => 1652546864,
 
 ]];

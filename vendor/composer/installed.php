@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e264d5df240d77f6c44bfd3f8672f88712075b20',
+        'reference' => 'f4762469b093aa2e9b18976a8cb73e8c6f8386e1',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e264d5df240d77f6c44bfd3f8672f88712075b20',
+            'reference' => 'f4762469b093aa2e9b18976a8cb73e8c6f8386e1',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(

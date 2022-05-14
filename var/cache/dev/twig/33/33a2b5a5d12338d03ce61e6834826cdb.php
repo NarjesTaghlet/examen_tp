@@ -70,7 +70,7 @@ class __TwigTemplate_35c9f969fe675b83c11aba2636850d9f extends Template
         echo "    ";
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_start', ["attr" => ["novalidate" => "novalidate"]]);
         echo "
-    <div class=\"row\">
+        <div class=\"row\">
         <div class=\"col\">";
         // line 6
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), 'row');
@@ -166,7 +166,7 @@ class __TwigTemplate_35c9f969fe675b83c11aba2636850d9f extends Template
 
 {% block body %}
     {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}) }}
-    <div class=\"row\">
+        <div class=\"row\">
         <div class=\"col\">{{form_row(form.nom)}}</div>
         <div class=\"row\">
             <div class=\"col\">{{form_row(form.prenom)}}</div>

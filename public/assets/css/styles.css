@@ -10,6 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11692,7 +11693,6 @@ body {
   content: " ";
   display: table;
 }
-
 .btn-datatable {
   height: 20px !important;
   width: 20px !important;

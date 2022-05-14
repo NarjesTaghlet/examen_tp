@@ -52,10 +52,7 @@ class __TwigTemplate_dbab72b22b52bf7356d3e9dd3026bf31 extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"stylesheet\" href=\"";
-        // line 6
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("node_modules/bootstrap/dist/css/bootsrap.css"), "html", null, true);
-        echo "\">
+
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
         // line 9
@@ -175,14 +172,9 @@ class __TwigTemplate_dbab72b22b52bf7356d3e9dd3026bf31 extends Template
         return "base.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  156 => 20,  143 => 16,  133 => 15,  119 => 11,  109 => 10,  90 => 5,  78 => 21,  76 => 20,  72 => 18,  70 => 15,  67 => 14,  65 => 10,  62 => 9,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  153 => 20,  140 => 16,  130 => 15,  116 => 11,  106 => 10,  87 => 5,  75 => 21,  73 => 20,  69 => 18,  67 => 15,  64 => 14,  62 => 10,  59 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -192,7 +184,7 @@ class __TwigTemplate_dbab72b22b52bf7356d3e9dd3026bf31 extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"stylesheet\" href=\"{{asset('node_modules/bootstrap/dist/css/bootsrap.css')}}\">
+
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 

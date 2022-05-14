@@ -15,7 +15,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], [], []],
-    'etudiant.liste' => [[], ['_controller' => 'App\\Controller\\EtudiantController::AfficherEtudiant'], [], [['text', '/etudiant/all']], [], [], []],
+    'etudiant.liste' => [['page', 'nbre'], ['page' => '1', 'nbre' => '10', '_controller' => 'App\\Controller\\EtudiantController::AfficherEtudiant'], [], [['variable', '/', '[^/]++', 'nbre', true], ['variable', '/', '[^/]++', 'page', true], ['text', '/etudiant/all']], [], [], []],
     'etudiant.edit' => [['id'], ['id' => '0', '_controller' => 'App\\Controller\\EtudiantController::addEtudiant'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/etudiant/edit']], [], [], []],
     'etudiant.delete' => [['id'], ['_controller' => 'App\\Controller\\EtudiantController::deleteEtudiant'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/etudiant/delete']], [], [], []],
 ];
